@@ -496,6 +496,8 @@ public class CropOverlayView extends View {
         final float top = Edge.TOP.getCoordinate();
         final float right = Edge.RIGHT.getCoordinate();
         final float bottom = Edge.BOTTOM.getCoordinate();
+        final float width = getWidth();
+        final float height = getHeight();
 
         /*-
           -------------------------------------
@@ -512,10 +514,10 @@ public class CropOverlayView extends View {
          */
 
         // Draw "top", "bottom", "left", then "right" quadrants.
-        canvas.drawRect(bitmapRect.left, bitmapRect.top, bitmapRect.right, top, mBackgroundPaint);
-        canvas.drawRect(bitmapRect.left, bottom, bitmapRect.right, bitmapRect.bottom, mBackgroundPaint);
-        canvas.drawRect(bitmapRect.left, top, left, bottom, mBackgroundPaint);
-        canvas.drawRect(right, top, bitmapRect.right, bottom, mBackgroundPaint);
+        canvas.drawRect(0, 0, width, top, mBackgroundPaint);
+        canvas.drawRect(0, bottom, width, height, mBackgroundPaint);
+        canvas.drawRect(0, top, left, bottom, mBackgroundPaint);
+        canvas.drawRect(right, top, width, bottom, mBackgroundPaint);
     }
 
     private void drawCorners(Canvas canvas) {
