@@ -25,11 +25,12 @@ Installation
 **build.gradle**
 
 	repositories {
-		mavenCentral()
+		// ...
+	    	maven { url "https://jitpack.io" }
 	}
 
 	dependencies {
-	  compile 'com.edmodo:cropper:1.0.1'
+	  compile 'com.github.alexanderbezverhni:cropper:v1.0.2'
 	}
 
 License
